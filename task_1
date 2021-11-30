@@ -1,0 +1,21 @@
+from random import randint
+import time
+def line_search(a, n):
+    start_time = time.time()
+    ls = [randint(0,10) for i in range(n)]
+    ls1 = sorted(ls)
+    for i in range (len(ls1)):
+        if ls1[i] == a:
+            print(i)
+            break
+        if a not in ls1:
+            print("Числа нет")
+            break
+    print("Время поиска %s" % (time.time()-start_time))
+line_search(1, 1000000)
+
+
+# 1 - Время поиска 0.019220638278514655
+# 10 - Время поиска 0.037942703878581069
+# 100 - Время поиска 0.096457702431491461
+#1000000 - Время поиска 0.991675182692201373
